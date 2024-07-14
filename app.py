@@ -9,6 +9,9 @@ import google.generativeai as genai
 os.getenv("GOOGLE_API_KEY") # configure google api from env file
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
+#Help
+#https://colab.research.google.com/github/google/generative-ai-docs/blob/main/site/en/gemini-api/docs/get-started/python.ipynb#scrollTo=FTl5NjtrhA0J
+
 # func to load and generate responses
 
 def gemini_response(behave,image,prompt): 
