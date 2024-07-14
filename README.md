@@ -2,7 +2,7 @@ With Gemini vision pro API from Google studio,  built a simple streamlit app tha
 
 Note that the default behaviour of the model is set to read invoices only.
 
-If you want you can change it's behaviour by adding your own text under behaviour variable in app.py  
+If you want you can change it's behaviour then add your own text under behaviour variable in app.py  
 
 For example : if you want the model to get the ingredients of a dish in an image , simply edit the behaviour variable.
 
