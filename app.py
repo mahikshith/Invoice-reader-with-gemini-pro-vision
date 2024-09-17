@@ -23,6 +23,7 @@ def gemini_response(behave,image,prompt):
 # Function to prepare image data for the API
 def input_image_setup(uploaded_file):
     if uploaded_file is not None:
+        # extracting byte info from images , gemini-pro requires the  info in specific format
         bytes_data = uploaded_file.getvalue()
         image_parts = [
             {
@@ -35,7 +36,7 @@ def input_image_setup(uploaded_file):
         raise FileNotFoundError("No file uploaded")
 
 behaviour = '''You are an expert in understanding the invoices
-in multiple languages, you will receive imput as images of invoice and you
+in multiple languages, you will receive input as images of invoice and you
 need to answer questions based on the input image provided'''
 
 # streamlit intialize 
@@ -44,7 +45,7 @@ input = st.text_input("enter the input",key="input")
 uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 image = ""
 if uploaded_image is not None : 
-    image= Image.open(uploaded_image)
+    image= Image.open(uploaded_image) # display uploaded image in the streamlit
     st.image(image, caption="uploaded_image",use_column_width=True)
 
 submit= st.button("What's the image is saying")
